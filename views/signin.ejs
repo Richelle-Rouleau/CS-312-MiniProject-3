@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+  <div><%-include("header.ejs")%></div>
+  <div class="clearfix">
+  <% if (error) { %>
+    <p class="error"><%= error %></p>
+  <% } %>
+
+  <form action="/signin" method="POST">
+    <div>
+      <label for="name">Username:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+
+    <button class="btn my-btn" type="submit">Sign In</button>
+  </form>
+
+  <p>Don't have an account? <a class="my-link" href="/signup">Sign up</a></p>
+  <p><a class="my-link" href="/">Back to Home</a></p>
+</div>
+</body>
+</html>

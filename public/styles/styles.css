@@ -1,0 +1,128 @@
+header {
+  flex: 0 0 auto;
+  text-align: center;
+  background-color: plum;
+}
+
+.nav-bar {
+  background-color: plum;
+}
+
+.headerfix {
+  background-color: plum;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardfix {
+  flex: 0 0 auto;
+  margin: 5%;
+  background: pink;
+}
+
+.card-by {
+  font-size: 12px;
+  color: grey;
+}
+
+.card-time {
+  font-size: 10px;
+  color: grey;
+}
+
+.card-text {
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.button-center {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.editor-body {
+  text-align: center;
+  margin-top: 10%;
+}
+
+body {
+  background-color: blanchedalmond;
+}
+
+.my-btn {
+  background-color: black;
+  outline-color: black;
+  text-decoration: none;
+  color: magenta;
+  cursor: pointer;
+  user-select: none;
+  border-color: magenta;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15 ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+.my-btn:hover {
+  background-color: magenta;
+  color: black;
+  border-color: black;
+}
+
+.my-btn:active {
+  background-color: magenta;
+  color: black;
+  border-color: black;
+}
+
+.delete {
+  color: red;
+  border-color: red;
+}
+
+.delete:hover {
+  background-color: red;
+  color: black;
+  border-color: black;
+}
+
+.delete:active {
+  background-color: red;
+  color: black;
+  border-color: black;
+}
+
+.look-nice {
+  text-align: center;
+  margin-top: 25%;
+  font-size: 30px;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 3px solid magenta;
+  background-color: seashell;
+  margin: 0 0 10px 0;
+  border-radius: 8px;
+}
+
+textarea {
+  border: 3px solid magenta;
+  padding: 10%;
+  background-color: seashell;
+  margin: 0 0 10px 0;
+  border-radius: 8px;
+  width: 75%;
+}
+
+.clearfix {
+  text-align: center;
+  margin-top: 15%;
+}
+
+.my-link {
+  color: rgb(162, 26, 162);
+}

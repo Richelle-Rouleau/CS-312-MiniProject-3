@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Home</title>
+  </head>
+  <body>
+
+    <div><%- include("header.ejs")%></div>
+
+    <div class="button-center">
+      <%if (user) {%>
+        <p>Signed in as <strong><%= user.name%></strong></p>
+        <a href="/create-post">
+          <button class="btn my-btn" type="button">Create Post</button>
+        </a>
+        <form action="/signout" method="POST">
+          <button class="btn my-btn delete" type="submit">Sign Out</button>
+        </form>
+      <%} else { %>
+        <a href="/signin">
+          <button class="btn my-btn" type="button">Sign In</button>
+        </a>
+        <a href="/signup">
+          <button class="btn my-btn" type="button"><strong>Sign Up</strong></button>
+        </a>
+      <%}%>
+    </div>
+    <div>
+
+    <div>
+      <% if (posts.length === 0) { %>
+        <p class="look-nice"><strong>No posts</strong></p>
+      <% } else { %>
+      <% posts.forEach(post => { %>
+        <div class="card cardfix">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <div>
+            <div>
+            <p>
+              <%= post.content %>
+            </p>
+            </div>
+            <p class="card-by">
+              <strong>By:</strong> <%= post.auther %>
+            </p>
+            <p class="card-time">
+              <strong>Created:</strong> <%= post.date%>
+            </p>
+          </div>
+          <% if (user && user.user_id === post.creator_user_id) { %>
+          <div class="d-flex justify-content-end gap-2">
+            <a href="/edit-post/<%= post.id %>">
+            <button type="button" class="btn my-btn">Edit</button>
+            </a>
+
+            <form action="/delete-post/<%= post.id %>?_method=DELETE" method="POST">
+              <!-- <a href="/edit-post/<%= post.id %>"> -->
+                <button type="submit" class="btn my-btn delete" >Delete</button>
+              <!-- </a> -->
+            </form>
+          </div>
+          <%}%>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      <%});%>
+      <%}%>
+    </div>
+</div>
+  </body>
+</html>
